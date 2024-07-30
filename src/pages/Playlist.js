@@ -20,7 +20,7 @@ const Playlist = () => {
             const user = JSON.parse(loggedInUser);
             setUser(user);
     
-            axios.get('https://course-backend-ajbr.onrender.com/api/course_materials')
+            axios.get('http://localhost:5000/api/course_materials')
                 .then(response => {
                     console.log("Received sections from backend:", response.data.sections);
                     const allSections = response.data.sections;

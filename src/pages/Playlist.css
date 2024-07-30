@@ -1,0 +1,40 @@
+/* src/Playlist.css */
+.course-materials {
+    display: flex;
+}
+
+.playlist-container {
+    width: 20%;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+}
+
+.content-container {
+    width: 80%;
+    padding: 10px;
+}
+
+.playlist {
+    overflow-y: auto;
+}
+
+.playlist-section {
+    margin-bottom: 15px;
+}
+
+.playlist-item {
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.playlist-item:hover {
+    background-color: #eee;
+}
+
+.content-iframe, .content-video {
+    width: 100%;
+    height: 80vh;
+}

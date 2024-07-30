@@ -1,0 +1,126 @@
+/* ManualPaymentPage.css */
+
+.my-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    height: 100vh;
+}
+
+.payment-form {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.payment-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.payment-form div {
+    margin-bottom: 20px;
+}
+
+.payment-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="email"],
+.payment-form input[type="tel"],
+.payment-form input[type="file"] {
+    width: calc(100% - 16px); /* to accommodate padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.payment-form button {
+    width: 97%;
+    padding: 12px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.payment-form button:hover {
+    background-color: #0056b3;
+}
+
+.payment-form .error-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: red;
+    text-align: center;
+}
+
+.payment-form .success-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: green;
+    text-align: center;
+}
+
+.payment-form .theme-toggle-button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.payment-form .theme-toggle-button:hover {
+    background-color: #218838;
+}
+
+/* Theme Colors */
+
+.light-theme {
+    background-color: #f0f2f5;
+    color: black;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+/* Additional styles for dark theme elements */
+.dark-theme form {
+    border-radius: 8px;
+    background: #444;
+    color: white;
+}
+
+.dark-theme input {
+    background: #555;
+    border: 1px solid #666;
+    color: white;
+}
+
+.dark-theme button {
+    background-color: #007bff;
+    color: white;
+}
+
+.dark-theme button:hover {
+    background-color: #0056b3;
+}

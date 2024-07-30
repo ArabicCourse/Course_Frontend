@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Course_Frontend/static/css/main.2764c269.css",
+    "main.js": "/Course_Frontend/static/js/main.12e91805.js",
+    "static/js/453.f943afb8.chunk.js": "/Course_Frontend/static/js/453.f943afb8.chunk.js",
+    "static/media/academics_languages.jpeg": "/Course_Frontend/static/media/academics_languages.a5688a2d710351b8db6e.jpeg",
+    "static/media/instractor_photo.jpeg": "/Course_Frontend/static/media/instractor_photo.aa60d8c0f52bb4412e20.jpeg",
+    "static/media/writing.jpeg": "/Course_Frontend/static/media/writing.512fe977249823606904.jpeg",
+    "static/media/Comprehensive.jpeg": "/Course_Frontend/static/media/Comprehensive.91d1b04e21a839ae4e06.jpeg",
+    "static/media/Interactive.jpeg": "/Course_Frontend/static/media/Interactive.45af7e056a24db9231a8.jpeg",
+    "static/media/essential.jpeg": "/Course_Frontend/static/media/essential.93e306ce41e9af9f93f3.jpeg",
+    "index.html": "/Course_Frontend/index.html",
+    "main.2764c269.css.map": "/Course_Frontend/static/css/main.2764c269.css.map",
+    "main.12e91805.js.map": "/Course_Frontend/static/js/main.12e91805.js.map",
+    "453.f943afb8.chunk.js.map": "/Course_Frontend/static/js/453.f943afb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2764c269.css",
+    "static/js/main.12e91805.js"
+  ]
+}

@@ -16,7 +16,7 @@ const CourseMaterials = () => {
             setUser(user);
         }
 
-        axios.get('https://course-backend-ajbr.onrender.com/api/course_materials')
+        axios.get('http://localhost:5000/api/course_materials')
             .then(response => {
                 setSections(response.data.sections);
             })

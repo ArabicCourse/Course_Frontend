@@ -121,7 +121,7 @@ At the heart of Abdelmegid's teaching philosophy lies a genuine connection to th
         <footer className="text-center mt-5">
           <p>© Школа арабского языка для русских 2024</p>
           <div>
-            <a href="http://localhost:3000/terms" className="text-decoration-none">Terms of Use</a> | <a href="http://localhost:3000/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="http://localhost:3000/ContactUs" className="text-decoration-none">Contact Us</a>
+            <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">Terms of Use</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">Contact Us</a>
           </div>
           <p>Teach Online with <a href="#" className="text-decoration-none"></a></p>
         </footer>

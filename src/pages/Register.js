@@ -21,7 +21,6 @@ const Register = () => {
                 password,
                 date_of_birth: dateOfBirth,
             });
-            setMessage(response.data.message);
         } catch (error) {
             console.error('There was an error creating the user!', error);
             setMessage('This email is already registered.');

@@ -37,10 +37,10 @@ const CourseMaterials = () => {
                             <div className="course-name">{item.name}</div>
                             <div className="course-action">
                                 {user && user.auth ? (
-                                    <a href={"http://localhost:3000/course/"+item.name} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Start</a>
+                                    <a href={"https://course-frontend-git-main-arabiccourses-projects.vercel.app/course"+item.name} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Start</a>
                                 ) : (
                                     !item.authorized ? (
-                                        <a href={"http://localhost:3000/course/"+item.name} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Preview</a>
+                                        <a href={"https://course-frontend-git-main-arabiccourses-projects.vercel.app/course"+item.name} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Preview</a>
                                     ) : (
                                         <button className="btn btn-secondary" disabled>Start</button>
                                     )

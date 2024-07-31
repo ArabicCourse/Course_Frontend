@@ -14,7 +14,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/login', { email, password });
+            const response = await axios.post('https://course-backend-ajbr.onrender.com/api/login', { email, password });
             if (response.data.auth !== undefined) {
                 localStorage.setItem('user', JSON.stringify(response.data));
                 setMessage('Login successful!');

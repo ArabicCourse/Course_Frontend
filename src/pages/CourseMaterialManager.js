@@ -13,7 +13,7 @@ const CourseMaterialManager = () => {
     });
 
     const fetchMaterials = async () => {
-        const response = await axios.get('http://localhost:5000/api/materials');
+        const response = await axios.get('https://course-backend-ajbr.onrender.com/api/materials');
         setMaterials(response.data);
     };
 
@@ -31,19 +31,19 @@ const CourseMaterialManager = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/api/materials', form);
+        await axios.post('https://course-backend-ajbr.onrender.com/api/materials', form);
         fetchMaterials();
         setForm({ section_name: '', item_type: 'video', item_name: '', free: false, url: '', preview_url: '' });
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:5000/api/materials/${id}`);
+        await axios.delete(`https://course-backend-ajbr.onrender.com/api/materials/${id}`);
         fetchMaterials();
     };
 
     const handleEdit = async (id) => {
         const updatedItem = materials.find(material => material.id === id);
-        await axios.put(`http://localhost:5000/api/materials/${id}`, updatedItem);
+        await axios.put(`https://course-backend-ajbr.onrender.com/api/materials/${id}`, updatedItem);
         fetchMaterials();
     };
 

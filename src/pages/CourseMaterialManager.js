@@ -11,7 +11,7 @@ const CourseMaterialManager = () => {
         authorized: false,
         url: ''
     });
-
+const [notification, setNotification] = useState({ message: '', type: '' });
     const fetchMaterials = async () => {
         const response = await axios.get('https://course-backend-ajbr.onrender.com/api/materials');
         setMaterials(response.data);

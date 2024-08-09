@@ -47,8 +47,9 @@
     }
 
     .payment-form button {
-        width: calc(100% - 16px); /* to accommodate padding */
-        padding: 10px;        
+        width: 97%;
+        padding: 12px;
+        margin: 10px;
         background-color: #007bff;
         color: white;
         border: none;
@@ -166,9 +167,8 @@
     }
 
     .payment-form button {
-        width: 97%;
-        padding: 12px;
-        margin: 10px;
+        width: calc(100% - 16px); /* to accommodate padding */
+        padding: 10px;        
         background-color: #007bff;
         color: white;
         border: none;

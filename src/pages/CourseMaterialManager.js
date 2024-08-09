@@ -49,7 +49,7 @@ const CourseMaterialManager = () => {
 
     return (
         <div>
-            <h2 id='#header-manager'>Course Material Manager</h2>
+            <h2 id='header-manager'>Course Material Manager</h2>
             <form onSubmit={handleSubmit}>
                 <input name="section_name" placeholder="Section Name" value={form.section_name} onChange={handleInputChange} required />
                 <select name="item_type" value={form.item_type} onChange={handleInputChange}>
@@ -58,7 +58,7 @@ const CourseMaterialManager = () => {
                 </select>
                 <input name="item_name" placeholder="Item Name" value={form.item_name} onChange={handleInputChange} required />
                 <label>
-                    Free:
+                    not Free:
                     <input name="authorized" type="checkbox" checked={form.authorized} onChange={handleInputChange} />
                 </label>
                 <input name="url" placeholder="URL" value={form.url} onChange={handleInputChange} required />
@@ -72,7 +72,7 @@ const CourseMaterialManager = () => {
                         <th>Section Name</th>
                         <th>Type</th>
                         <th>Name</th>
-                        <th>Free</th>
+                        <th>not Free</th>
                         <th>URL</th>
                         <th>Actions</th>
                     </tr>

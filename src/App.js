@@ -18,7 +18,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route index element = {<Home/>}/>
-                    <Route path= "/home" element = {<Home/>}/>
+                    <Route path= "/home" element = {<Home/>}/>    
+                    <Route path= "/playlist" element = {<CoursePlaylist/>}/>
                     <Route path="/playlist/:itemName" element={<CoursePlaylist />} />
                     <Route path= "/login" element={<Login/>}/>
                     <Route path= "/register" element={<Register/>}/>

@@ -11,7 +11,6 @@ import Payment from './pages/Payment';
 import Privacy from './pages/Privacy';
 import TermsOfUse from './pages/Terms';
 import ContactUs from './pages/ContactUs';
-import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
     return ( 

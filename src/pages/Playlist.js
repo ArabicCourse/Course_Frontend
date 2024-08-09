@@ -54,7 +54,7 @@ const Playlist = () => {
 
     const handleSelectItem = (item) => {
         setSelectedItem(item);
-        navigate(`/course/${encodeURIComponent(item.name)}`);
+        navigate(`/playlist/${encodeURIComponent(item.name)}`);
     };
 
     const handleLogout = () => {

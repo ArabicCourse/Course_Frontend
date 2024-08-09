@@ -20,18 +20,10 @@ const Playlist = () => {
             const user = JSON.parse(loggedInUser);
             setUser(user);
     
-            axios.get('https://course-backend-ajbr.onrender.com/api/course_materials')
+            axios.get('http://localhost:5000/api/course_materials')
                 .then(response => {
                     const allSections = response.data.sections;
-                    const filteredSections = allSections.map(section => {
-                        const filteredItems = section.items.filter(item => 
-                            user.auth || !item.authorized
-                        );
-                        return filteredItems.length > 0
-                            ? { ...section, items: filteredItems }
-                            : null;
-                    }).filter(section => section !== null);
-                    setSections(filteredSections);
+                    setSections(allSections);  // Set all sections without filtering
                     if (itemName) {
                         const foundItem = allSections.flatMap(section => section.items)
                             .find(item => item.name === decodeURIComponent(itemName));
@@ -101,19 +93,24 @@ const Playlist = () => {
                 <div className="playlist">
                     <h2>Playlist</h2>
                     {sections.map(section => (
-                        <div key={section.name} className="playlist-section">
-                            <h3>{section.name}</h3>
-                            {section.items.map(item => (
-                                <div 
-                                    key={item.name} 
-                                    className="playlist-item" 
-                                    onClick={() => handleSelectItem(item)}
-                                >
-                                    {item.name}
-                                </div>
-                            ))}
-                        </div>
-                    ))}
+    <div key={section.name} className="playlist-section">
+        <h3>{section.name}</h3>
+        {section.items.map(item => (
+            <div 
+                key={item.name} 
+                className={`playlist-item ${(!user.auth && item.authorized) ? 'disabled' : ''}`}
+                onClick={() => {
+                    if (user.auth || !item.authorized) {
+                        handleSelectItem(item);
+                    }
+                }}
+            >
+                {item.name}
+                {(!user.auth && item.authorized) && <span className="lock-icon">🔒</span>}
+            </div>
+        ))}
+    </div>
+))}
                 </div>
             </div>
             

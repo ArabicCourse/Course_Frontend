@@ -49,7 +49,7 @@ const CourseMaterialManager = () => {
 
     return (
         <div>
-            <h2>Course Material Manager</h2>
+            <h2 id='#header-manager'>Course Material Manager</h2>
             <form onSubmit={handleSubmit}>
                 <input name="section_name" placeholder="Section Name" value={form.section_name} onChange={handleInputChange} required />
                 <select name="item_type" value={form.item_type} onChange={handleInputChange}>

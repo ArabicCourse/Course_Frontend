@@ -1,4 +1,5 @@
 /* src/Playlist.css */
+@media (min-width: 768px) {
 .course-materials {
     display: flex;
 }
@@ -37,4 +38,114 @@
 .content-iframe, .content-video {
     width: 100%;
     height: 80vh;
+}
+}
+
+@media (max-width: 991px) {
+.course-materials {
+    display: flex;
+}
+
+/* Sidebar toggle button for small screens */
+.sidebar-toggle-div {
+    width:100%;
+    margin-top: 1px;
+    position: absolute;
+    background-color: #f9f9f9;
+    height: 50px;
+    z-index: 9999;   /* Ensure it stays above other elements */
+}
+
+.sidebar-toggle-div button {
+    width: 100%;     /* Set fixed width */
+    height: 50px;    /* Set fixed height */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;  /* Keep the button above everything */
+    padding: 0;
+    
+}
+
+/* Content container */
+.content-container {
+    margin-top: 60px;
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+    flex: 1;
+}
+
+/* Playlist section */
+.playlist-section {
+    margin-bottom: 15px;
+}
+
+.playlist h2{
+    margin-top: 50px;
+}
+
+/* Playlist item */
+.playlist-item {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Playlist item hover state */
+.playlist-item:hover {
+    background-color: #eee;
+}
+
+/* Content styles */
+.content-iframe, .content-video {
+    width: 100%;
+    height: 80vh;
+}
+
+/* Footer styles */
+.subscription-footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+footer {
+    font-size: 14px;
+    color: white;
+}
+
+/* Media queries for smaller screens */
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .playlist-container {
+        width: 20%;
+        background-color: #f9f9f9;
+        border-right: 1px solid #ddd;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-y: auto; 
+
+        position:absolute;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 999;   
+    }
+
+    .playlist-container.open {
+        left: 0;
+    }
+
+    .content-container {
+        margin-left: 0;
+        width: 100%;
+    }
 }

@@ -11,6 +11,7 @@ import Payment from './pages/Payment';
 import Privacy from './pages/Privacy';
 import TermsOfUse from './pages/Terms';
 import ContactUs from './pages/ContactUs';
+import CourseMaterialManager from './pages/CourseMaterialManager';
 
 function App() {
     return ( 
@@ -26,7 +27,8 @@ function App() {
                     <Route path='/payment' element={<Payment/>}/>
                     <Route path='/privacy' element={<Privacy/>}/>
                     <Route path='/terms' element={<TermsOfUse/>}/>
-                    <Route path='/ContactUs' element={<ContactUs/>}/>
+                    <Route path='/ContactUs' element={<ContactUs/>}/>    
+                    <Route path='/CourseMaterialManager' element={<CourseMaterialManager/>}/>
                 </Routes>
             </BrowserRouter>          
             

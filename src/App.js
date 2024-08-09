@@ -19,7 +19,6 @@ function App() {
                 <Routes>
                     <Route index element = {<Home/>}/>
                     <Route path= "/home" element = {<Home/>}/>
-                    <Route path= "/course" element = {<CoursePlaylist/>}/>
                     <Route path="/playlist/:itemName" element={<CoursePlaylist />} />
                     <Route path= "/login" element={<Login/>}/>
                     <Route path= "/register" element={<Register/>}/>

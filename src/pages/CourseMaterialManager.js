@@ -31,25 +31,33 @@ const CourseMaterialManager = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('https://course-backend-ajbr.onrender.com/api/materials', form);
+        await axios.post('https://course-backend-ajbr.onrender.com/api/materials', form);        
+        setNotification({ message: 'New item added successfully!', type: 'success' });
         fetchMaterials();
         setForm({ section_name: '', item_type: 'video', item_name: '', free: false, url: '', preview_url: '' });
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`https://course-backend-ajbr.onrender.com/api/materials/${id}`);
+        await axios.delete(`https://course-backend-ajbr.onrender.com/api/materials/${id}`);        
+        setNotification({ message: 'Item deleted successfully!', type: 'deleted' });
         fetchMaterials();
     };
 
     const handleEdit = async (id) => {
         const updatedItem = materials.find(material => material.id === id);
         await axios.put(`https://course-backend-ajbr.onrender.com/api/materials/${id}`, updatedItem);
+        setNotification({ message: 'Item edited successfully!', type: 'success' });
         fetchMaterials();
     };
 
     return (
         <div>
             <h2 id='header-manager'>Course Material Manager</h2>
+            {notification.message && (
+                <div className={`alert ${notification.type === 'success' ? 'alert-success' : 'deleted'}`}>
+                    {notification.message}
+                </div>
+            )}
             <form onSubmit={handleSubmit}>
                 <input name="section_name" placeholder="Section Name" value={form.section_name} onChange={handleInputChange} required />
                 <select name="item_type" value={form.item_type} onChange={handleInputChange}>

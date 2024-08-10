@@ -78,7 +78,9 @@ const Register = () => {
                         required
                     />
                 </div>
-                <button type="submit">Register</button>
+                 <button type="submit" disabled={loading}>
+                        {loading ? 'Registering...' : 'Register'}
+                    </button>
                 
             <button onClick={() => navigate('/login')}>Go to Login</button>
             </form>

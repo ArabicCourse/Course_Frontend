@@ -11,7 +11,9 @@ const CourseMaterialManager = () => {
         authorized: false,
         url: ''
     });
-const [notification, setNotification] = useState({ message: '', type: '' });
+
+    const [notification, setNotification] = useState({ message: '', type: '' });
+
     const fetchMaterials = async () => {
         const response = await axios.get('https://course-backend-ajbr.onrender.com/api/materials');
         setMaterials(response.data);
@@ -31,24 +33,46 @@ const [notification, setNotification] = useState({ message: '', type: '' });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('https://course-backend-ajbr.onrender.com/api/materials', form);        
-        setNotification({ message: 'New item added successfully!', type: 'success' });
-        fetchMaterials();
-        setForm({ section_name: '', item_type: 'video', item_name: '', free: false, url: '', preview_url: '' });
+        const modifiedForm = {
+            ...form,
+            url: form.url.slice(0, -4) + 'raw=1'
+        };
+    
+        try {
+            await axios.post('https://course-backend-ajbr.onrender.com/api/materials', modifiedForm);
+            setNotification({ message: 'New item added successfully!', type: 'success' });
+            fetchMaterials(); // Fetch updated materials list
+            setForm({ section_name: '', item_type: 'video', item_name: '', authorized: false, url: '' });
+        } catch (error) {
+            setNotification({ message: 'Error adding item: ' + (error.response?.data?.message || error.message), type: 'error' });
+        }
     };
+    
 
     const handleDelete = async (id) => {
-        await axios.delete(`https://course-backend-ajbr.onrender.com/api/materials/${id}`);        
+        await axios.delete(`https://course-backend-ajbr.onrender.com/api/materials/${id}`);
         setNotification({ message: 'Item deleted successfully!', type: 'deleted' });
         fetchMaterials();
     };
 
     const handleEdit = async (id) => {
         const updatedItem = materials.find(material => material.id === id);
-        await axios.put(`https://course-backend-ajbr.onrender.com/api/materials/${id}`, updatedItem);
-        setNotification({ message: 'Item edited successfully!', type: 'success' });
-        fetchMaterials();
+    
+        // Modify the URL by removing the last 4 characters and appending "raw=1"
+        const modifiedItem = {
+            ...updatedItem,
+            url: updatedItem.url.slice(0, -4) + 'raw=1'
+        };
+    
+        try {
+            await axios.put(`https://course-backend-ajbr.onrender.com/api/materials/${id}`, modifiedItem);
+            setNotification({ message: 'Item edited successfully!', type: 'success' });
+            fetchMaterials();
+        } catch (error) {
+            setNotification({ message: 'Error editing item: ' + (error.response?.data?.message || error.message), type: 'error' });
+        }
     };
+    
 
     return (
         <div>
@@ -94,7 +118,7 @@ const [notification, setNotification] = useState({ message: '', type: '' });
                                 <option value="pdf">PDF</option>
                             </select></td>
                             <td><input value={material.item_name} onChange={(e) => setMaterials(materials.map(m => m.id === material.id ? { ...m, item_name: e.target.value } : m))} /></td>
-                            <td><input type="checkbox" checked={material.authorized} onChange={(e) => setMaterials(materials.map(m => m.id === material.id ? { ...m, free: e.target.checked } : m))} /></td>
+                            <td><input type="checkbox" checked={material.authorized} onChange={(e) => setMaterials(materials.map(m => m.id === material.id ? { ...m, authorized: e.target.checked } : m))} /></td>
                             <td><input value={material.url} onChange={(e) => setMaterials(materials.map(m => m.id === material.id ? { ...m, url: e.target.value } : m))} /></td>
                             <td>
                                 <button onClick={() => handleEdit(material.id)}>Save</button>

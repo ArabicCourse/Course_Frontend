@@ -9,11 +9,14 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [dateOfBirth, setDateOfBirth] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); 
+        setMessage('');
         try {
             const response = await axios.post('https://course-backend-ajbr.onrender.com/api/register', {
                 name,
@@ -25,6 +28,9 @@ const Register = () => {
         } catch (error) {
             console.error('There was an error creating the user!', error);
             setMessage('This email is already registered.');
+        }
+        finally {
+            setLoading(false);  // Stop loading
         }
     };
 

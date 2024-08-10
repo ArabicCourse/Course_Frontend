@@ -82,7 +82,7 @@ const CourseMaterialManager = () => {
                     {notification.message}
                 </div>
             )}
-            <form onSubmit={handleSubmit}>
+            <form className='formManager' onSubmit={handleSubmit}>
                 <input name="section_name" placeholder="Section Name" value={form.section_name} onChange={handleInputChange} required />
                 <select name="item_type" value={form.item_type} onChange={handleInputChange}>
                     <option value="video">Video</option>

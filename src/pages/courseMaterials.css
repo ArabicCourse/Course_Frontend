@@ -1,0 +1,17 @@
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.course-action {
+    margin-left: auto;
+}
+
+.btn-block {
+    width: 100%;
+}

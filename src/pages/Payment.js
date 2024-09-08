@@ -25,7 +25,7 @@ const Payment = () => {
             formData.append('phone', phone);
             formData.append('file', file);
     
-            fetch('http://localhost:5000/api/payment', {
+            fetch('https://course-backend-ajbr.onrender.com/api/payment', {
                 method: 'POST',
                 body: formData
             }).then(response => response.json())

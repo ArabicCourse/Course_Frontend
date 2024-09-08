@@ -8,7 +8,7 @@ const Playlist = () => {
     const [sections, setSections] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
     const [user, setUser] = useState(null);
-    const [isSidebarOpen, setSidebarOpen] = useState(false); // State for mobile sidebar toggle
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     const navigate = useNavigate();
     const { itemName } = useParams();
 
@@ -17,18 +17,32 @@ const Playlist = () => {
         if (!loggedInUser) {
             navigate('/login');
         } else {
-            const user = JSON.parse(loggedInUser);
-            setUser(user);
-    
+            const parsedUser = JSON.parse(loggedInUser);
+            setUser(parsedUser);
+
+            axios.post('https://course-backend-ajbr.onrender.com/api/login', { 
+                email: parsedUser.email, 
+                password: parsedUser.password
+            })
+            .then(response => {
+                setUser(response.data);
+            })
+            .catch(error => {
+                console.error('Error authenticating user:', error);
+            });
+
             axios.get('https://course-backend-ajbr.onrender.com/api/course_materials')
                 .then(response => {
-                    const allSections = response.data.sections;
-                    setSections(allSections);  // Set all sections without filtering
+                    const filteredSections = response.data.sections
+                        .filter(section => section.name.includes('Разговор'))
+                        .sort((a, b) => a.name.localeCompare(b.name)); // Sort sections in ascending order
+                    setSections(filteredSections);
+
                     if (itemName) {
-                        const foundItem = allSections.flatMap(section => section.items)
+                        const foundItem = filteredSections.flatMap(section => section.items)
                             .find(item => item.name === decodeURIComponent(itemName));
                         if (foundItem) {
-                            if (foundItem.authorized && !user.auth) {
+                            if (foundItem.authorized && !parsedUser.auth) {
                                 navigate('/payment');
                             } else {
                                 setSelectedItem(foundItem);
@@ -49,6 +63,20 @@ const Playlist = () => {
         navigate(`/playlist/${item.name}`);
     };
 
+    const isAuthorized = (sectionName) => {
+        if (!user) return false;
+        switch (sectionName) {
+            case "Разговор_1":
+                return user.auth_talking1;
+            case "Разговор_2":
+                return user.auth_talking2;
+            case "Разговор_3":
+                return user.auth_talking3;
+            default:
+                return false;
+        }
+    };
+
     const handleLogout = () => {
         setUser(null);
         localStorage.removeItem('user');
@@ -60,75 +88,76 @@ const Playlist = () => {
     };
 
     return (
-        <div> 
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">CourseWebsite</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
-                {user && (
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello, {user.name}
-                        </a>
-                        <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <button className="dropdown-item" onClick={handleLogout}>Logout</button>
-                        </div>
-                    </li>
-                )}
-            </ul>
-        </div>
-    </nav>
-        <div className={`course-materials ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-           
-            <div className='sidebar-toggle-div'>
-                <button className="sidebar-toggle d-lg-none" onClick={toggleSidebar}>
-                Menu
-                </button>                 
-            </div>
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <a className="navbar-brand" href="/">CourseWebsite</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ml-auto">
+                        {user && (
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Hello, {user.name}
+                                </a>
+                                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                                </div>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+            </nav>
 
-            <div className={`playlist-container ${isSidebarOpen ? 'open' : ''}`}>
-                <div className="playlist">
-                    <h2>Playlist</h2>
-                    {sections.map(section => (
-    <div key={section.name} className="playlist-section">
-        <h3>{section.name}</h3>
-        {section.items.map(item => (
-            <div 
-                key={item.name} 
-                className={`playlist-item ${(!user.auth && item.authorized) ? 'disabled' : ''}`}
-                onClick={() => {
-                    if (user.auth || !item.authorized) {
-                        handleSelectItem(item);
-                    }
-                }}
-            >
-                {item.name}
-                {(!user.auth && item.authorized) && <span className="lock-icon">🔒</span>}
-            </div>
-        ))}
-    </div>
-))}
+            <div className={`course-materials ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                <div className='sidebar-toggle-div'>
+                    <button className="sidebar-toggle d-lg-none" onClick={toggleSidebar}>
+                        Menu
+                    </button>                 
+                </div>
+
+                <div className={`playlist-container ${isSidebarOpen ? 'open' : ''}`}>
+                    <div className="playlist">
+                        <h2>Playlist</h2>
+                        {sections.map(section => (
+                            <div key={section.name} className="playlist-section">
+                                <h3>{section.name}</h3>
+                                {section.items.map(item => (
+                                    <div 
+                                        key={item.name} 
+                                        className={`playlist-item ${(!isAuthorized(section.name) && item.authorized) ? 'disabled' : ''}`}
+                                        onClick={() => {
+                                            if (isAuthorized(section.name) || !item.authorized) {
+                                                handleSelectItem(item);
+                                            }
+                                        }}
+                                    >
+                                        {item.name}
+                                        {(!isAuthorized(section.name) && item.authorized) && <span className="lock-icon">🔒</span>}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="content-container">
+                    {selectedItem ? (
+                        selectedItem.type === 'pdf' ? (
+                            <iframe src={selectedItem.url} className="content-iframe" title="PDF Content" />
+                        ) : (
+                            <video controls width="100%">
+                                <source src={selectedItem.url} type="video/mp4" />
+                                Sorry, your browser doesn't support embedded videos.
+                            </video>
+                        )
+                    ) : (
+                        <div>Select an item from the playlist</div>
+                    )}
                 </div>
             </div>
-            
-            <div className="content-container">
-                {selectedItem ? (
-                    selectedItem.type === 'pdf' ? (
-                        <iframe src={selectedItem.url} className="content-iframe" title="PDF Content"/>
-                    ) : (
-                        <video controls width="100%">
-                            <source src={selectedItem.url} type="video/mp4" />
-                            Sorry, your browser doesn't support embedded videos.
-                        </video>
-                    )
-                ) : (
-                    <div>Select an item from the playlist</div>
-                )}
-            </div>
-            </div>
+
             <div className="subscription-footer mt-5">
                 <footer className="text-center mt-5">
                     <p>© Школа арабского языка для русских 2024</p>
@@ -138,7 +167,6 @@ const Playlist = () => {
                     <p>Teach Online with <a href="#" className="text-decoration-none"></a></p>
                 </footer>
             </div>
-        
         </div>
     );
 };

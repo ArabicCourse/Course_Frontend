@@ -89,7 +89,7 @@ const CourseMaterials = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="btn btn-outline-primary btn-block mt-auto"  href={`https://course-frontend-git-main-arabiccourses-projects.vercel.app/payment`}>Купить Сейчас</button>
+                                    <a className="btn btn-outline-primary btn-block mt-auto"  href={`https://course-frontend-git-main-arabiccourses-projects.vercel.app/payment`}>Купить Сейчас</a>
                                 </div>
                             </div>
                         </div>

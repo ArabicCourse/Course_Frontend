@@ -77,10 +77,10 @@ const CourseMaterials = () => {
                                                 <span>{item.name}</span>
                                                 <div className="course-action">
                                                     {isAuthorized(section.name) ? (
-                                                        <a href={`http://localhost:3000/playlist/${item.name}`} className="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Start</a>
+                                                        <a href={`https://course-frontend-git-main-arabiccourses-projects.vercel.app/${item.name}`} className="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Start</a>
                                                     ) : (
                                                         !item.authorized ? (
-                                                            <a href={`http://localhost:3000/playlist/${item.name}`} className="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">Preview</a>
+                                                            <a href={`https://course-frontend-git-main-arabiccourses-projects.vercel.app/${item.name}`} className="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">Preview</a>
                                                         ) : (
                                                             <button className="btn btn-secondary btn-sm" disabled>Start</button>
                                                         )

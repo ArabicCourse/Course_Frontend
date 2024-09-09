@@ -97,7 +97,7 @@ const Payment = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="/">CourseWebsite</a>
+                <a className="navbar-brand" href="/">Арабский язык</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -107,10 +107,10 @@ const Payment = () => {
                             <>
                                <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Hello, {user.name}
+                                        здравствуйте, {user.name}
                                     </a>
                                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                                        <button className="dropdown-item" onClick={handleLogout}>Выйти</button>
                                     </div>
                                 </li>
                             </>
@@ -124,12 +124,12 @@ const Payment = () => {
                     <h1>Ручная оплата</h1>
                     <p>Пожалуйста, переведите деньги на следующий банковский счет:</p>
                     <p>Банк: Сбербанк</p>
-                    <p>номер телефона: 123456789</p>
-                    <p>имя учетной записи: Aboulil</p>
+                    <p>номер телефона: +79991779611</p>
+                    <p>имя учетной записи: Абуеллаил Абдельмегуд Фати Ахмед</p>
 
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label>Name:</label>
+                            <label>ФИО:</label>
                             <input 
                                 type="text" 
                                 value={name}
@@ -139,7 +139,7 @@ const Payment = () => {
                             />
                         </div>
                         <div>
-                            <label>Email:</label>
+                            <label>Электронная почта:</label>
                             <input 
                                 type="email" 
                                 value={email}
@@ -149,7 +149,7 @@ const Payment = () => {
                             />
                         </div>
                         <div>
-                            <label>Phone:</label>
+                            <label>Телефон:</label>
                             <input 
                                 type="tel" 
                                 value={phone}
@@ -159,7 +159,7 @@ const Payment = () => {
                             />
                         </div>
                         <div>
-                            <label>Section Name:</label>
+                            <label>Название раздела:</label>
                             <select 
                                 value={sectionName} 
                                 onChange={(e) => setSectionName(e.target.value)} 
@@ -172,7 +172,7 @@ const Payment = () => {
                             </select>
                         </div>
                         <div>
-                            <label>Upload Payment Confirmation:</label>
+                            <label>Загрузить подтверждение платежа:</label>
                             <input 
                                 type="file" 
                                 name='user_payment'
@@ -181,7 +181,7 @@ const Payment = () => {
                             />
                         </div>
                         <button type="submit" disabled={loading}>
-                            {loading ? 'Submitting...' : 'Submit'}
+                            {loading ? 'Предоставление...' : 'Представить'}
                         </button>
                     </form>
                     {message && <p className="success-message">{message}</p>}
@@ -190,10 +190,11 @@ const Payment = () => {
 
             <div className="subscription-footer mt-5">
                 <footer className="text-center mt-5">
-                    <p>© Школа арабского языка для русских 2024</p>
+                    
                     <div>
-                        <a href="http://localhost:3000/terms" className="text-decoration-none">Terms of Use</a> | <a href="http://localhost:3000/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="http://localhost:3000/ContactUs" className="text-decoration-none">Contact Us</a>
+                        <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">Terms of Use</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">Contact Us</a>
                     </div>
+                        <p>© Школа арабского языка для русских 2024</p>
                 </footer>
             </div>
         </div>

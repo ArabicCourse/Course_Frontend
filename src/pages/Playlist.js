@@ -90,7 +90,7 @@ const Playlist = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="/">CourseWebsite</a>
+                <a className="navbar-brand" href="/">Арабский язык</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -99,10 +99,10 @@ const Playlist = () => {
                         {user && (
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Hello, {user.name}
+                                    здравствуйте, {user.name}
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                                    <button className="dropdown-item" onClick={handleLogout}>Выйти</button>
                                 </div>
                             </li>
                         )}
@@ -119,7 +119,7 @@ const Playlist = () => {
 
                 <div className={`playlist-container ${isSidebarOpen ? 'open' : ''}`}>
                     <div className="playlist">
-                        <h2>Playlist</h2>
+                        <h2>Список воспроизведения</h2>
                         {sections.map(section => (
                             <div key={section.name} className="playlist-section">
                                 <h3>{section.name}</h3>
@@ -149,22 +149,23 @@ const Playlist = () => {
                         ) : (
                             <video controls width="100%">
                                 <source src={selectedItem.url} type="video/mp4" />
-                                Sorry, your browser doesn't support embedded videos.
+                                К сожалению, ваш браузер не поддерживает встроенные видео.
                             </video>
                         )
                     ) : (
-                        <div>Select an item from the playlist</div>
+                        <div>Выберите элемент из списка воспроизведения</div>
                     )}
                 </div>
             </div>
 
             <div className="subscription-footer mt-5">
                 <footer className="text-center mt-5">
-                    <p>© Школа арабского языка для русских 2024</p>
+                    
                     <div>
-                        <a href="http://localhost:3000/terms" className="text-decoration-none">Terms of Use</a> | <a href="http://localhost:3000/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="http://localhost:3000/ContactUs" className="text-decoration-none">Contact Us</a>
+                        <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">условия использования</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">политика конфиденциальности</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">связаться с нами</a>
+          </div>
                     </div>
-                    <p>Teach Online with <a href="#" className="text-decoration-none"></a></p>
+                    <p>© Школа арабского языка для русских 2024</p>>
                 </footer>
             </div>
         </div>

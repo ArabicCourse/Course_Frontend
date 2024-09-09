@@ -62,7 +62,7 @@ function Home() {
                 <div className="hero-text">
                     <h1>Арабский язык для русскоговорящих</h1>
                     <p>Окунитесь в красоту арабского языка с помощью индивидуального обучения, которое устранит языковую пропасть для русскоязычных, обещая плавный переход от кириллицы к чарующему миру арабской письменности, открывая секреты базового общения, культурные нюансы и основы грамматики, которые помогут вам уверенно общаться на английском языке. Арабоязычный мир.</p>
-                    <a href="/payment" className="btn btn-primary btn-lg">Explore Courses</a>
+                    <a href="/payment" className="btn btn-primary btn-lg">Купить Сейчас</a>
                 </div>
             </div>
             <div className="intro-section">
@@ -71,7 +71,7 @@ function Home() {
                         <img src={require('../writing.jpeg')} alt="Course Introduction"/>
                     </div>
                     <div className="intro-text">
-                        <h2>The Course</h2>
+                        <h2>Курс</h2>
                         <p>Давайте погрузимся в увлекательный мир арабского языка – одного из шести официальных языков ООН и ключа к богатой культуре Ближнего Востока. Этот курс разработан специально для русскоговорящих и начинается с азов: мы учим арабский алфавит, основные правила произношения и постепенно переходим к повседневному общению. Поскольку арабский язык полон нюансов и тонкостей, мы уделяем особое внимание грамматике и словарному запасу, чтобы вы могли выражать свои мысли четко и точно.</p>
                         <p>Обучение включает в себя не только традиционные уроки, но и интерактивные упражнения, которые помогут вам лучше понять и прочувствовать язык. К тому же, использование реальных диалогов и текстов скрасит процесс и предоставит практический опыт, применимый в туризме, деловых переговорах или при личных встречах с носителями языка. Изучение арабского откроет перед вами двери в новый мир, расширит ваш кругозор и предоставит возможности для международного общения и карьерного роста.</p>
                     </div>
@@ -79,8 +79,8 @@ function Home() {
             </div>
 
             <div className="learn-section">
-                <h2>What you will learn</h2>
-                <p>When I started shaping this course, I had in mind the unique linguistic journey that you, as a Russian native, would embark on. Diving into the Arabic language opens up a whole new world of cultural treasures and business opportunities. I've meticulously tailored every lesson to build upon your existing Cyrillic-imbued alphabet knowledge, which in some surprising ways aligns with Arabic language logic. We'll move step-by-step, making sure that each concept is clearly understood and can be applied practically. It's more than just learning a language; it's about discovering a rich linguistic tapestry in a structured, digestible fashion. By the end of it, you'll not only grasp the fundamentals but also appreciate the nuances that make Arabic both beautiful and beneficial to learn.</p>
+                <h2>Чему вы научитесь?</h2>
+                <p>Когда я начинал разрабатывать этот курс, я имел в виду уникальное лингвистическое путешествие, в которое вы, как носитель русского языка, отправитесь. Изучение арабского языка открывает совершенно новый мир культурных ценностей и возможностей для бизнеса. Я тщательно подготовил каждый урок, опираясь на ваши знания кириллического алфавита, которые удивительным образом согласуются с логикой арабского языка. Мы будем продвигаться шаг за шагом, следя за тем, чтобы каждая концепция была четко понята и ее можно было применять на практике. Это больше, чем просто изучение языка; речь идет о том, чтобы открыть для себя богатую лингвистическую палитру в структурированном и удобоваримом виде. К концу курса вы не только усвоите основы, но и оцените нюансы, которые делают арабский язык красивым и полезным для изучения.</p>
             </div>
             <div id="courses" className="container">
                 <CourseMaterials />
@@ -92,28 +92,28 @@ function Home() {
                             <img src={require('../instractor_photo.jpeg')} alt="Instructor" className="img-fluid" style={{borderRadius:'10px'}} />
                         </div>
                         <div className="instructor-text col-lg-8">
-                            <h2>Your instructor</h2>
-                            <p>Abdelmegid Abouellail stands at the crossroads of cultural exchange, bringing with him a profound understanding of the Arabic language's intricate tapestry, which he expertly weaves into the fabric of his teaching. With years of dedicated experience in linguistics and a deep-rooted passion for fostering communication between diverse peoples, Abdelmegid has honed his craft as a skilled educator. His commitment to language education is underscored by his specialization in tailoring the rich lexicon and complex grammar of Arabic to the unique linguistic framework of Russian natives, bridging the gap between two distinct cultures through the power of language.
+                            <h2>Ваш инструктор</h2>
+                            <p>Абдельмегид Абуэлайл стоит на перекрестке культурных обменов, привнося с собой глубокое понимание сложного ковра арабского языка, который он мастерски вплетает в ткань своего преподавания. Обладая многолетним опытом работы в области лингвистики и глубоко укоренившейся страстью к развитию общения между разными народами, Абдельмегид отточил свое мастерство квалифицированного педагога. Его приверженность языковому образованию подчеркивается его специализацией в адаптации богатого лексикона и сложной грамматики арабского языка к уникальной языковой среде коренных жителей России, устраняя разрыв между двумя различными культурами с помощью силы языка.
 
-At the heart of Abdelmegid's teaching philosophy lies a genuine connection to the Arabic language, a connection that extends beyond mere academic interest to a passionate engagement with the language's beauty and its cultural significance. This passion is palpable in his interactive and dynamic teaching style, which not only engages his students but also instills in them a similar appreciation for the nuances of Arabic. His ability to empathize with the linguistic challenges faced by Russian speakers creates a learning environment that is both supportive and enriching, reflecting his personal investment in each student's journey towards language mastery.</p>
+В основе философии преподавания Абдельмегида лежит подлинная связь с арабским языком, связь, которая выходит за рамки простого академического интереса к красоте языка и его культурному значению. Эта страсть ощутима в его интерактивном и динамичном стиле преподавания, который не только вовлекает его студентов, но и прививает им такое же понимание нюансов арабского языка. Его способность сопереживать лингвистическим трудностям, с которыми сталкиваются носители русского языка, создает благоприятную и обогащающую учебную среду, отражающую его личный вклад в продвижение каждого студента к овладению языком.</p>
                         </div>                  
                     </div>
                 </div>
                 <div className="row mt-5 text-center">
                 <div className="col-md-2">
                     <img src={require('../essential.jpeg')} alt="Essential" className="img-fluid" style={{maxHeight:'300px', borderRadius:'10px'}} />
-                    <h3>Essential</h3>
-                    <p style={{ paddingBottom:'1.5rem'}}>Foundational Arabic proficiency for Russian speakers</p>
+                    <h3>Существенный</h3>
+                    <p style={{ paddingBottom:'1.5rem'}}>Базовый уровень владения арабским языком для русскоговорящих</p>
                 </div>
                 <div className="col-md-2">
                     <img src={require('../Comprehensive.jpeg')} alt="Comprehensive" className="img-fluid" style={{maxHeight:'300px', borderRadius:'10px'}} />
-                    <h3>Comprehensive</h3>
-                    <p>From basic expressions to complex sentences for Russian natives</p>
+                    <h3>Всесторонний</h3>
+                    <p>От простых выражений до сложных предложений для носителей русского языка</p>
                 </div>
                 <div className="col-md-2">
                     <img src={require('../Interactive.jpeg')} alt="Interactive" className="img-fluid" style={{maxHeight:'300px', borderRadius:'10px'}} />
-                    <h3>Interactive</h3>
-                    <p>Engaging Arabic conversational skills for the Russian-speaking community</p>
+                    <h3>Интерактивный</h3>
+                    <p>Развитие навыков разговорной речи на арабском языке у русскоязычного сообщества</p>
                 </div>
                 </div>
         </div>    
@@ -121,7 +121,7 @@ At the heart of Abdelmegid's teaching philosophy lies a genuine connection to th
         <footer className="text-center mt-5">
           <p>© Школа арабского языка для русских 2024</p>
           <div>
-            <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">Terms of Use</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">Contact Us</a>
+            <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">условия использования</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">политика конфиденциальности</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">связаться с нами</a>
           </div>
           <p>Teach Online with <a href="#" className="text-decoration-none"></a></p>
         </footer>

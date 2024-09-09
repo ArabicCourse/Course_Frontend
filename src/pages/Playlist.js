@@ -147,7 +147,7 @@ const Playlist = () => {
                         selectedItem.type === 'pdf' ? (
                             <iframe src={selectedItem.url} className="content-iframe" title="PDF Content" />
                         ) : (
-                            <video controls width="100%">
+                            <video controls width="100%" poster="https://www.dropbox.com/scl/fi/fvep113llkcz0q5c8olxs/photo_2024-09-09_22-28-35.jpg?rlkey=4h5kmsugleb3svd1ozmlkn6kz&st=hmsss8lv&raw=1">
                                 <source src={selectedItem.url} type="video/mp4" />
                                 К сожалению, ваш браузер не поддерживает встроенные видео.
                             </video>

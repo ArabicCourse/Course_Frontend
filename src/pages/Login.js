@@ -43,7 +43,7 @@ const Login = () => {
                 <a className="navbar-brand" href="/">Арабский язык</a>
             </nav>
             <div className="login-form">
-                <h1>Login</h1>
+                <h1>Вход</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label>Электронная почта:</label>
@@ -66,7 +66,7 @@ const Login = () => {
                     <button type="submit" disabled={loading}>
                         {loading ? 'Погрузка...' : 'Вход'}
                     </button>
-                    <button type="button" onClick={() => navigate('/register')}>Перейдите к регистрации</button>
+                    <button type="button" onClick={() => navigate('/register')}>регистрировать</button>
                 </form>
                 {message && <p>{message}</p>}
             </div>

@@ -192,7 +192,7 @@ const Payment = () => {
                 <footer className="text-center mt-5">
                     
                     <div>
-                        <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">Terms of Use</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">Privacy Policy</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">Contact Us</a>
+                        <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">условия использования</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">политика конфиденциальности</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">связаться с нами</a>
                     </div>
                         <p>© Школа арабского языка для русских 2024</p>
                 </footer>

@@ -158,9 +158,9 @@ const Payment = () => {
                                 required
                             >
                                 <option value="" disabled>Select a section</option>
-                                <option value="Section 1">Разговор_1</option>
-                                <option value="Section 2">Разговор_2</option>
-                                <option value="Section 3">Разговор_3</option>
+                                <option value="Разговор_1">Разговор_1</option>
+                                <option value="Разговор_2">Разговор_2</option>
+                                <option value="Разговор_3">Разговор_3</option>
                             </select>
                         </div>
                         <div>

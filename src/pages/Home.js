@@ -119,10 +119,10 @@ function Home() {
         </div>    
         <div className="subscription-footer mt-5">
         <footer className="text-center mt-5">
-          <p>© Школа арабского языка для русских 2024</p>
           <div>
             <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/terms" className="text-decoration-none">условия использования</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/privacy" className="text-decoration-none">политика конфиденциальности</a> | <a href="https://course-frontend-git-main-arabiccourses-projects.vercel.app/ContactUs" className="text-decoration-none">связаться с нами</a>
           </div>
+              <p>© Школа арабского языка для русских 2024</p>
         </footer>
       </div>
     </div>

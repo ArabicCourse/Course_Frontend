@@ -40,13 +40,13 @@ const Login = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light">
-                <a className="navbar-brand" href="/">CourseWebsite</a>
+                <a className="navbar-brand" href="/">Арабский язык</a>
             </nav>
             <div className="login-form">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label>Email:</label>
+                        <label>Электронная почта:</label>
                         <input
                             type="email"
                             value={email}
@@ -55,7 +55,7 @@ const Login = () => {
                         />
                     </div>
                     <div>
-                        <label>Password:</label>
+                        <label>Пароль:</label>
                         <input
                             type="password"
                             value={password}
@@ -64,9 +64,9 @@ const Login = () => {
                         />
                     </div>
                     <button type="submit" disabled={loading}>
-                        {loading ? 'Loading...' : 'Login'}
+                        {loading ? 'Погрузка...' : 'Вход'}
                     </button>
-                    <button type="button" onClick={() => navigate('/register')}>Go to Register</button>
+                    <button type="button" onClick={() => navigate('/register')}>Перейдите к регистрации</button>
                 </form>
                 {message && <p>{message}</p>}
             </div>

@@ -66,6 +66,7 @@ const Login = () => {
                     <button type="submit" disabled={loading}>
                         {loading ? 'Погрузка...' : 'Вход'}
                     </button>
+                    <p>Или</p>
                     <button type="button" onClick={() => navigate('/register')}>регистрировать</button>
                 </form>
                 {message && <p>{message}</p>}

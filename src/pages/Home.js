@@ -27,7 +27,7 @@ function Home() {
     return (
         <div className="App">
             <nav className="navbar navbar-expand-lg navbar-light">
-                <a className="navbar-brand" href="/">CourseWebsite</a>
+                <a className="navbar-brand" href="/">Арабский язык</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -37,20 +37,20 @@ function Home() {
                             <>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Hello, {user.name}
+                                        здравствуйте, {user.name}
                                     </a>
                                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+                                        <button className="dropdown-item" onClick={handleLogout}>Выйти</button>
                                     </div>
                                 </li>
                             </>
                         ) : (
                             <>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/login">Login</a>
+                                    <a className="nav-link" href="/login">вход</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/register">Register</a>
+                                    <a className="nav-link" href="/register">регистрировать</a>
                                 </li>
                             </>
                         )}
@@ -60,8 +60,8 @@ function Home() {
 
             <div className="hero-image">
                 <div className="hero-text">
-                    <h1>Arabic Language for Russian Natives</h1>
-                    <p>Dive into the beauty of the Arabic language with tailored instruction that bridges the linguistic divide for Russian speakers, promising a seamless learning journey from the Cyrillic script to the enchanting world of Arabic script, unlocking the secrets of basic communication, cultural nuances, and the fundamental grammar that will empower you to confidently engage with the Arab-speaking world.</p>
+                    <h1>Арабский язык для русскоговорящих</h1>
+                    <p>Окунитесь в красоту арабского языка с помощью индивидуального обучения, которое устранит языковую пропасть для русскоязычных, обещая плавный переход от кириллицы к чарующему миру арабской письменности, открывая секреты базового общения, культурные нюансы и основы грамматики, которые помогут вам уверенно общаться на английском языке. Арабоязычный мир.</p>
                     <a href="/payment" className="btn btn-primary btn-lg">Explore Courses</a>
                 </div>
             </div>

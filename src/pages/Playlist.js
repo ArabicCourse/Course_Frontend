@@ -113,7 +113,7 @@ const Playlist = () => {
             <div className={`course-materials ${isSidebarOpen ? 'sidebar-open' : ''}`}>
                 <div className='sidebar-toggle-div'>
                     <button className="sidebar-toggle d-lg-none" onClick={toggleSidebar}>
-                        Menu
+                        Меню
                     </button>                 
                 </div>
 

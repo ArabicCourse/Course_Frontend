@@ -37,13 +37,13 @@ const Register = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light">
-            <a className="navbar-brand" href="/">CourseWebsite</a>
+            <a className="navbar-brand" href="/">Арабский язык</a>
             </nav>
         <div className="register-form">
-            <h1>Register</h1>
+            <h1>регистрировать</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Name:</label>
+                    <label>Имя:</label>
                     <input
                         type="text"
                         value={name}
@@ -52,7 +52,7 @@ const Register = () => {
                     />
                 </div>
                 <div>
-                    <label>Email:</label>
+                    <label>Электронная почта:</label>
                     <input
                         type="email"
                         value={email}
@@ -61,7 +61,7 @@ const Register = () => {
                     />
                 </div>
                 <div>
-                    <label>Password:</label>
+                    <label>Пароль:</label>
                     <input
                         type="password"
                         value={password}
@@ -70,7 +70,7 @@ const Register = () => {
                     />
                 </div>
                 <div>
-                    <label>Date of Birth:</label>
+                    <label>дата рождения:</label>
                     <input
                         type="date"
                         value={dateOfBirth}
@@ -79,10 +79,10 @@ const Register = () => {
                     />
                 </div>
                  <button type="submit" disabled={loading}>
-                        {loading ? 'Registering...' : 'Register'}
+                        {loading ? 'Регистрация...' : 'регистрировать'}
                     </button>
-                
-            <button onClick={() => navigate('/login')}>Go to Login</button>
+                <p>Или</p>
+            <button onClick={() => navigate('/login')}>Вход</button>
             </form>
             {message && <p>{message}</p>}
         </div>

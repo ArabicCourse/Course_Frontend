@@ -8,8 +8,9 @@ const Payment = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [file, setFile] = useState(null);
-    const [sectionName, setSectionName] = useState(''); // New state for section_name
+    const [sectionName, setSectionName] = useState(''); 
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false); // New state for loading
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
 
@@ -19,13 +20,14 @@ const Payment = () => {
 
     const handleSubmit = (e) => {       
         e.preventDefault();
+        setLoading(true); // Start loading
 
         const formData = new FormData();
         formData.append('name', name);
         formData.append('email', email);
         formData.append('phone', phone);
         formData.append('file', file);
-        formData.append('section_name', sectionName); // Include the selected section
+        formData.append('section_name', sectionName);
 
         fetch('https://course-backend-ajbr.onrender.com/api/payment', {
             method: 'POST',
@@ -37,6 +39,9 @@ const Payment = () => {
         }).catch(error => {
             setMessage('An error occurred');
             console.error(error);
+        })
+        .finally(() => {
+            setLoading(false); // Stop loading
         });
 
         // EmailJS Integration
@@ -45,7 +50,7 @@ const Payment = () => {
             user_email: email,
             user_phone: phone,
             user_payment: file ? file.name : '',
-            section_name: sectionName // Include the selected section in the email
+            section_name: sectionName 
         };
 
         emailjs.send(
@@ -60,6 +65,9 @@ const Payment = () => {
         }).catch((error) => {
             console.log('FAILED...', error);
             alert('There was an error sending your message. Please try again later.');
+        })
+        .finally(() => {
+            setLoading(false); // Stop loading
         });
 
         // Reset form
@@ -67,7 +75,7 @@ const Payment = () => {
         setEmail('');
         setPhone('');
         setFile(null);
-        setSectionName(''); // Reset section_name
+        setSectionName('');
     };
 
     useEffect(() => {
@@ -172,7 +180,9 @@ const Payment = () => {
                                 required 
                             />
                         </div>
-                        <button type="submit">Submit</button>
+                        <button type="submit" disabled={loading}>
+                            {loading ? 'Submitting...' : 'Submit'}
+                        </button>
                     </form>
                     {message && <p className="success-message">{message}</p>}
                 </div>
